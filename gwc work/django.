@@ -1,0 +1,359 @@
+Last login: Wed Aug  2 13:30:22 on ttys001
+GWCs-MacBook-Pro:djangogirls gwcstudent$ source myvenv/bin/activate
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ admin.site.register(Post)
+-bash: syntax error near unexpected token `Post'
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ admin.site.register
+-bash: admin.site.register: command not found
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ python manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 11 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+August 02, 2017 - 17:47:50
+Django version 1.10.7, using settings 'mysite.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+Error: That port is already in use.
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ python manage.py createsuperuser
+
+You have 11 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+Username (leave blank to use 'gwcstudent'): 
+Email address: maevekenny129@gmail.com
+Password: 
+Password (again): 
+The password is too similar to the email address.
+Password: 
+Password (again): 
+Traceback (most recent call last):
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 337, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: auth_user.last_login
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    execute_from_command_line(sys.argv)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/core/management/__init__.py", line 367, in execute_from_command_line
+    utility.execute()
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/core/management/__init__.py", line 359, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/core/management/base.py", line 294, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/contrib/auth/management/commands/createsuperuser.py", line 63, in execute
+    return super(Command, self).execute(*args, **options)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/core/management/base.py", line 345, in execute
+    output = self.handle(*args, **options)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/contrib/auth/management/commands/createsuperuser.py", line 183, in handle
+    self.UserModel._default_manager.db_manager(database).create_superuser(**user_data)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/contrib/auth/models.py", line 168, in create_superuser
+    return self._create_user(username, email, password, **extra_fields)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/contrib/auth/models.py", line 151, in _create_user
+    user.save(using=self._db)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/contrib/auth/base_user.py", line 80, in save
+    super(AbstractBaseUser, self).save(*args, **kwargs)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/models/base.py", line 796, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/models/base.py", line 824, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/models/base.py", line 908, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/models/base.py", line 947, in _do_insert
+    using=using, raw=raw)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/models/query.py", line 1045, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1054, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 337, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: auth_user.last_login
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ python manage.py startapp [app_label]
+CommandError: '[app_label]' is not a valid app name. Please make sure the name is a valid identifier.
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ python manage.py startapp
+usage: manage.py startapp [-h] [--version] [-v {0,1,2,3}]
+                          [--settings SETTINGS] [--pythonpath PYTHONPATH]
+                          [--traceback] [--no-color] [--template TEMPLATE]
+                          [--extension EXTENSIONS] [--name FILES]
+                          name [directory]
+manage.py startapp: error: You must provide an application name.
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ djangogirls
+-bash: djangogirls: command not found
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ python manage.py createsuperuser
+
+You have 11 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+Username (leave blank to use 'gwcstudent'): mkenny
+Email address: maevekenny129@gmail.com
+Password: 
+Password (again): 
+The password is too similar to the email address.
+Password: 
+Password (again): 
+Traceback (most recent call last):
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 337, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: auth_user.last_login
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    execute_from_command_line(sys.argv)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/core/management/__init__.py", line 367, in execute_from_command_line
+    utility.execute()
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/core/management/__init__.py", line 359, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/core/management/base.py", line 294, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/contrib/auth/management/commands/createsuperuser.py", line 63, in execute
+    return super(Command, self).execute(*args, **options)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/core/management/base.py", line 345, in execute
+    output = self.handle(*args, **options)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/contrib/auth/management/commands/createsuperuser.py", line 183, in handle
+    self.UserModel._default_manager.db_manager(database).create_superuser(**user_data)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/contrib/auth/models.py", line 168, in create_superuser
+    return self._create_user(username, email, password, **extra_fields)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/contrib/auth/models.py", line 151, in _create_user
+    user.save(using=self._db)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/contrib/auth/base_user.py", line 80, in save
+    super(AbstractBaseUser, self).save(*args, **kwargs)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/models/base.py", line 796, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/models/base.py", line 824, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/models/base.py", line 908, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/models/base.py", line 947, in _do_insert
+    using=using, raw=raw)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/models/query.py", line 1045, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1054, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 337, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: auth_user.last_login
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ python manage.py createsuperuser
+
+You have 11 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+Username (leave blank to use 'gwcstudent'): 
+Email address: maevekenny129@gmail.com
+Password: 
+Password (again): 
+The password is too similar to the email address.
+Password: 
+Password (again): 
+Traceback (most recent call last):
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 337, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: auth_user.last_login
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    execute_from_command_line(sys.argv)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/core/management/__init__.py", line 367, in execute_from_command_line
+    utility.execute()
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/core/management/__init__.py", line 359, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/core/management/base.py", line 294, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/contrib/auth/management/commands/createsuperuser.py", line 63, in execute
+    return super(Command, self).execute(*args, **options)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/core/management/base.py", line 345, in execute
+    output = self.handle(*args, **options)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/contrib/auth/management/commands/createsuperuser.py", line 183, in handle
+    self.UserModel._default_manager.db_manager(database).create_superuser(**user_data)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/contrib/auth/models.py", line 168, in create_superuser
+    return self._create_user(username, email, password, **extra_fields)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/contrib/auth/models.py", line 151, in _create_user
+    user.save(using=self._db)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/contrib/auth/base_user.py", line 80, in save
+    super(AbstractBaseUser, self).save(*args, **kwargs)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/models/base.py", line 796, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/models/base.py", line 824, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/models/base.py", line 908, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/models/base.py", line 947, in _do_insert
+    using=using, raw=raw)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/models/query.py", line 1045, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1054, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/gwcstudent/djangogirls/myvenv/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 337, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: auth_user.last_login
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ python manage.py createsuperuser
+
+You have 11 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+Username (leave blank to use 'gwcstudent'): python manage.py migrate
+Error: Enter a valid username. This value may contain only letters, numbers, and @/./+/-/_ characters.
+Username (leave blank to use 'gwcstudent'): ^C
+Operation cancelled.
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ python manage.py migrations 
+Unknown command: 'migrations'
+Type 'manage.py help' for usage.
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, blog, contenttypes, sessions
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying sessions.0001_initial... OK
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ python manage.py createsuperuser
+Username (leave blank to use 'gwcstudent'): 
+Email address: maevekenny129@gmail.com
+Password: 
+Password (again): 
+Superuser created successfully.
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ git init
+Initialized empty Git repository in /Users/gwcstudent/djangogirls/.git/
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ git config --global user.name "Maeve"
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ git config --global user.email maevekenny129@gmail.com
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ .gitignore
+-bash: .gitignore: command not found
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ .pyc
+-bash: .pyc: command not found
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ ~
+-bash: /Users/gwcstudent: is a directory
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ ls
+blog		manage.py	myvenv
+db.sqlite3	mysite
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ djangogirls
+-bash: djangogirls: command not found
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ cd djangogirls
+-bash: cd: djangogirls: No such file or directory
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+	blog/
+	manage.py
+	mysite/
+
+nothing added to commit but untracked files present (use "git add" to track)
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ git add .
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ git add --all .
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ git commit -m "My Django Girls app, first commit" 
+[master (root-commit) e43b363] My Django Girls app, first commit
+ 14 files changed, 257 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 blog/__init__.py
+ create mode 100644 blog/admin.py
+ create mode 100644 blog/apps.py
+ create mode 100644 blog/migrations/0001_initial.py
+ create mode 100644 blog/migrations/__init__.py
+ create mode 100644 blog/models.py
+ create mode 100644 blog/tests.py
+ create mode 100644 blog/views.py
+ create mode 100755 manage.py
+ create mode 100644 mysite/__init__.py
+ create mode 100644 mysite/settings.py
+ create mode 100644 mysite/urls.py
+ create mode 100644 mysite/wsgi.py
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ mkennyy
+-bash: mkennyy: command not found
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ <mkennyy>
+-bash: syntax error near unexpected token `newline'
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ mkennyy
+-bash: mkennyy: command not found
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ git remote add origin https://github.com/mkennyy/my-first-blog.git
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ git push -u origin master
+Username for 'https://github.com': mkennyy
+Password for 'https://mkennyy@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/mkennyy/my-first-blog.git/'
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ git push -u origin master
+Username for 'https://github.com': mkennyy
+Password for 'https://mkennyy@github.com': 
+To https://github.com/mkennyy/my-first-blog.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/mkennyy/my-first-blog.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ git clone https://github.com/mkennyy/my-first-blog.git
+Cloning into 'my-first-blog'...
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ tree my-first-blog
+-bash: tree: command not found
+(myvenv) GWCs-MacBook-Pro:djangogirls gwcstudent$ cd my-first-blog
+(myvenv) GWCs-MacBook-Pro:my-first-blog gwcstudent$ virtualenv --python=python3.5 myvenv
+-bash: virtualenv: command not found
+(myvenv) GWCs-MacBook-Pro:my-first-blog gwcstudent$ source myvenv/bin/activate
+-bash: myvenv/bin/activate: No such file or directory
+(myvenv) GWCs-MacBook-Pro:my-first-blog gwcstudent$ 

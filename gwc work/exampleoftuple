@@ -1,0 +1,8 @@
+tup1 = ('code', 'bank', 2017, 15)
+tup2 = (1, 2, 3, 4, 5)
+tup3 = "a", "b", "c", "d"
+print(tup1)
+print(tup2)
+print(tup3)
+tup4 = (1234, 56)
+tup5 = ('abc', 'xyz')
